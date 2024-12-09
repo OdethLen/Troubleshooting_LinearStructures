@@ -40,15 +40,13 @@ namespace Troubleshooting_LinearStructures
         {
             if (qualifications.Count > 0)
             {
-                // Calcular el promedio usando LINQ
                 double promedio = qualifications.Average();
-                // Mostrar el promedio en el Label
-                lblAverage.Text = "Promedio: " + promedio.ToString("F2");
+                lblAverage.Text = "Average: " + promedio.ToString("F2");
             }
             else
             {
-                // Si no hay calificaciones, mostrar un mensaje
-                MessageBox.Show("No hay calificaciones para calcular el promedio.");
+                MessageBox.Show("There are no qualifications for calculating the average.");
+                return;
             }
         }
 
@@ -56,17 +54,13 @@ namespace Troubleshooting_LinearStructures
         {
             if (int.TryParse(txtQualification.Text, out int calificacion))
             {
-                // Agregar la calificación a la lista
                 qualifications.Add(calificacion);
-                // Limpiar el TextBox para ingresar una nueva calificación
                 txtQualification.Clear();
-                // Mostrar un mensaje de éxito
-                MessageBox.Show("Calificación agregada correctamente.");
+                MessageBox.Show("Qualification added correctly.");
             }
             else
             {
-                // Si no es un número válido, mostrar un mensaje de error
-                MessageBox.Show("Por favor ingresa una calificación válida.");
+                MessageBox.Show("Please enter a valid qualification.");
             }
         }
 
